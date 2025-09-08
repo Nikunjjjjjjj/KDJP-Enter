@@ -130,8 +130,10 @@ export const getBooksByClass = (bookClass: string): Book[] => {
 
 // Helper function to get all available classes
 export const getAvailableClasses = (): string[] => {
-  const classes = sampleBooks.map(book => book.class).filter(Boolean);
-  return [...new Set(classes)]; // Remove duplicates
+  const classes = sampleBooks
+    .map(book => book.class)
+    .filter((classValue): classValue is string => Boolean(classValue));
+  return Array.from(new Set(classes)); // Remove duplicates
 };
 
 // Helper function to search books by title or publisher

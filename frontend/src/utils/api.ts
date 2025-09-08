@@ -2,7 +2,8 @@ import { Book, Order, CheckoutFormData, ApiResponse } from '@/types';
 import { logger } from './logger';
 
 // API base URL - will be replaced with actual backend URL
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://kdjp-enter.onrender.com/api';
+//console.log('API_BASE_URL', API_BASE_URL);
 
 // Generic API request helper
 async function apiRequest<T>(
